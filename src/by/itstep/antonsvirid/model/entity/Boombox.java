@@ -8,7 +8,7 @@ public class Boombox extends HouseEquipments {
     public Boombox() {
     }
 
-    public Boombox(String name, int power, int cost, boolean inSet) {
+    public Boombox(String name, int power, int cost, boolean inSet) throws Exception {
         super(name, power, cost, inSet);
     }
 

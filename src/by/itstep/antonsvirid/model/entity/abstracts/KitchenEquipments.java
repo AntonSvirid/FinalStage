@@ -1,9 +1,7 @@
 package by.itstep.antonsvirid.model.entity.abstracts;
 
 
-import by.itstep.antonsvirid.model.entity.TurnOnable;
-
-public abstract class KitchenEquipments implements TurnOnable {
+public abstract class KitchenEquipments implements TurnOnable, Conditionable {
     private String name;
     private int power;
     private int cost;
@@ -13,9 +11,13 @@ public abstract class KitchenEquipments implements TurnOnable {
     public KitchenEquipments() {
     }
 
-    public KitchenEquipments(String name, int power, int cost, boolean inSet) {
+    public KitchenEquipments(String name, int power, int cost, boolean inSet) throws Exception {
         this.name = name;
-        this.power = power;
+        if (power > 0) {
+            this.power = power;
+        } else {
+            throw new Exception();
+        }
         this.cost = cost;
         this.inSet = inSet;
         this.turnOnStatus = false;
@@ -75,24 +77,9 @@ public abstract class KitchenEquipments implements TurnOnable {
         }
     }
 
-    public void turnOn() {
-        if (inSet == true && turnOnStatus == false) {
-            turnOnStatus = true;
-            System.out.println("Device was turnon...");
-        } else {
-            System.out.println("error, not correct status");
-        }
-    }
+    public abstract void turnOn();
 
-    public void turnOff() {
-        if (inSet == true && turnOnStatus != false) {
-            turnOnStatus = false;
-            System.out.println("Device was turnoff...");
-        } else {
-            System.out.println("error, not correct status");
-        }
-    }
+    public abstract void turnOff();
 
-//    public abstract void povedenie();
 }
 

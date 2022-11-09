@@ -1,13 +1,12 @@
 package by.itstep.antonsvirid.model.entity;
 
-import by.itstep.antonsvirid.model.entity.abstracts.KitchenEquipments;
+import by.itstep.antonsvirid.model.entity.abstracts.HouseEquipments;
 
-public class Kettle extends KitchenEquipments {
-
-    public Kettle() {
+public class Mixer extends HouseEquipments {
+    public Mixer() {
     }
 
-    public Kettle(String name, int power, int cost, boolean inSet) throws Exception {
+    public Mixer(String name, int power, int cost, boolean inSet) throws Exception {
         super(name, power, cost, inSet);
     }
 
@@ -15,7 +14,7 @@ public class Kettle extends KitchenEquipments {
     public void turnOn() {
         if (isInSet() == true && isTurnOnStatus() == false) {
             setTurnOnStatus(true);
-            System.out.println("Kettle was turnon...");
+            System.out.println("Mixer was turnon...");
         } else {
             System.out.println("error, not correct status");
         }
@@ -25,7 +24,7 @@ public class Kettle extends KitchenEquipments {
     public void turnOff() {
         if (isInSet() == true && isTurnOnStatus() != false) {
             setTurnOnStatus(false);
-            System.out.println("Kettle was turnoff...");
+            System.out.println("Mixer was turnoff...");
         } else {
             System.out.println("error, not correct status");
         }

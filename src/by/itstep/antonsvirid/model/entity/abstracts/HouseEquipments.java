@@ -1,10 +1,6 @@
 package by.itstep.antonsvirid.model.entity.abstracts;
 
-import by.itstep.antonsvirid.model.entity.TurnOnable;
-
-import java.sql.SQLOutput;
-
-public abstract class HouseEquipments implements TurnOnable{
+public abstract class HouseEquipments implements TurnOnable, Conditionable {
     private String name;
     private int power;
     private int cost;
@@ -14,9 +10,14 @@ public abstract class HouseEquipments implements TurnOnable{
     public HouseEquipments() {
     }
 
-    public HouseEquipments(String name, int power, int cost, boolean inSet) {
+    public HouseEquipments(String name, int power, int cost, boolean inSet) throws Exception{
         this.name = name;
-        this.power = power;
+        if (power > 0) {
+            this.power = power;
+        } else {
+            throw new Exception();
+        }
+
         this.cost = cost;
         this.inSet = inSet;
         this.turnOnStatus = false;
@@ -34,12 +35,12 @@ public abstract class HouseEquipments implements TurnOnable{
         return cost;
     }
 
-    public void setInSet(boolean inSet) {
-        inSet = inSet;
-    }
-
     public boolean isInSet() {
         return inSet;
+    }
+
+    public void setInSet(boolean inSet) {
+        inSet = inSet;
     }
 
     public boolean isTurnOnStatus() {
@@ -65,6 +66,7 @@ public abstract class HouseEquipments implements TurnOnable{
             System.out.println("error, not correct status");
         }
     }
+
     public void disConnectPlug() {
         if (inSet != false) {
             inSet = false;
@@ -75,22 +77,9 @@ public abstract class HouseEquipments implements TurnOnable{
         }
     }
 
-    public void turnOn() {
-        if (inSet == true && turnOnStatus == false) {
-            turnOnStatus = true;
-            System.out.println("Device was turnon...");
-        } else {
-            System.out.println("error, not correct status");
-        }
-    }
-    public  void turnOff() {
-        if (inSet == true && turnOnStatus != false) {
-            turnOnStatus = false;
-            System.out.println("Device was turnoff...");
-        } else {
-            System.out.println("error, not correct status");
-        }
-    }
+    public abstract void turnOn();
 
-//    public abstract void povedenie();
+    public abstract void turnOff();
 }
+
+

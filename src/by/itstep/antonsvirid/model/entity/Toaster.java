@@ -2,12 +2,10 @@ package by.itstep.antonsvirid.model.entity;
 
 import by.itstep.antonsvirid.model.entity.abstracts.KitchenEquipments;
 
-public class Kettle extends KitchenEquipments {
-
-    public Kettle() {
+public class Toaster extends KitchenEquipments {
+    public Toaster() {
     }
-
-    public Kettle(String name, int power, int cost, boolean inSet) throws Exception {
+    public Toaster(String name, int power, int cost, boolean inSet) throws Exception {
         super(name, power, cost, inSet);
     }
 
@@ -15,7 +13,7 @@ public class Kettle extends KitchenEquipments {
     public void turnOn() {
         if (isInSet() == true && isTurnOnStatus() == false) {
             setTurnOnStatus(true);
-            System.out.println("Kettle was turnon...");
+            System.out.println("Toaster was turnon...");
         } else {
             System.out.println("error, not correct status");
         }
@@ -25,7 +23,7 @@ public class Kettle extends KitchenEquipments {
     public void turnOff() {
         if (isInSet() == true && isTurnOnStatus() != false) {
             setTurnOnStatus(false);
-            System.out.println("Kettle was turnoff...");
+            System.out.println("Toaster was turnoff...");
         } else {
             System.out.println("error, not correct status");
         }
