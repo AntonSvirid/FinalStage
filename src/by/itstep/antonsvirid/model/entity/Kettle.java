@@ -13,7 +13,7 @@ public class Kettle extends KitchenEquipments {
 
     @Override
     public void turnOn() throws Exception{
-        if (isInSet() && isTurnOnStatus()) {
+        if (isInSet() && isTurnOnStatus() == false) {
             setTurnOnStatus(true);
             System.out.println("Kettle was turnon...");
         } else {

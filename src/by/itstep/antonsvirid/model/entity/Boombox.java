@@ -14,7 +14,7 @@ public class Boombox extends HouseEquipments {
 
     @Override
     public void turnOn() {
-        if (isInSet() == true && isTurnOnStatus() == false) {
+        if (isInSet() && isTurnOnStatus() == false) {
             setTurnOnStatus(true);
             System.out.println("Boombox was turnon...");
         } else {
@@ -24,7 +24,7 @@ public class Boombox extends HouseEquipments {
 
     @Override
     public void turnOff() {
-        if (isInSet() == true && isTurnOnStatus() != false) {
+        if (isInSet() && isTurnOnStatus() != false) {
             setTurnOnStatus(false);
             System.out.println("Boombox was turnoff...");
         } else {
