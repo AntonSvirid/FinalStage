@@ -30,6 +30,7 @@ public class Main {
         };
 
         equipments[1].turnOn();
+        equipments[3].disConnectPlug();
 
         int totalPower = Housewife.calculatedTotalPower(equipments);
         System.out.println("Общая мощность подключенных к сети приборов: " + totalPower + "\n");

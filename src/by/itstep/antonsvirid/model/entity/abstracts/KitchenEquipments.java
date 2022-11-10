@@ -13,14 +13,18 @@ public abstract class KitchenEquipments implements TurnOnable, Conditionable {
 
     public KitchenEquipments(String name, int power, int cost, boolean inSet) throws Exception {
         this.name = name;
-        if (power > 0) {
+        if (power > 0 && power < 12_000) {
             this.power = power;
         } else {
             throw new Exception();
         }
-        this.cost = cost;
+        if (cost > 0) {
+            this.cost = cost;
+        } else {
+            throw new Exception();
+        }
         this.inSet = inSet;
-        this.turnOnStatus = false;
+        this.turnOnStatus = false;      // all equipments are not turnOn as default
     }
 
     public String getName() {
@@ -77,9 +81,9 @@ public abstract class KitchenEquipments implements TurnOnable, Conditionable {
         }
     }
 
-    public abstract void turnOn();
+    public abstract void turnOn() throws Exception;
 
-    public abstract void turnOff();
+    public abstract void turnOff() throws Exception;
 
 }
 

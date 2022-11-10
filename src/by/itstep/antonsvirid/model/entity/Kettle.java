@@ -12,22 +12,24 @@ public class Kettle extends KitchenEquipments {
     }
 
     @Override
-    public void turnOn() {
-        if (isInSet() == true && isTurnOnStatus() == false) {
+    public void turnOn() throws Exception{
+        if (isInSet() && isTurnOnStatus()) {
             setTurnOnStatus(true);
             System.out.println("Kettle was turnon...");
         } else {
             System.out.println("error, not correct status");
+            throw new Exception();
         }
     }
 
     @Override
-    public void turnOff() {
-        if (isInSet() == true && isTurnOnStatus() != false) {
+    public void turnOff()  throws Exception{
+        if (isInSet() && isTurnOnStatus()) {
             setTurnOnStatus(false);
             System.out.println("Kettle was turnoff...");
         } else {
             System.out.println("error, not correct status");
+            throw new Exception();
         }
     }
 }

@@ -8,9 +8,9 @@ public interface Conditionable {
     int getCost();
 
     boolean isTurnOnStatus();
-    void turnOn();
+    void turnOn() throws Exception;
 
-    void turnOff();
+    void turnOff() throws Exception;
 
     void connectPlug();
 
