@@ -1,6 +1,5 @@
 package by.itstep.antonsvirid.model.entity;
 
-
 import by.itstep.antonsvirid.model.entity.abstracts.KitchenEquipments;
 
 public class Mixer extends KitchenEquipments {

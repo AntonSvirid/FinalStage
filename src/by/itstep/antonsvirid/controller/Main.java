@@ -7,8 +7,6 @@ import by.itstep.antonsvirid.model.entity.Kettle;
 import by.itstep.antonsvirid.model.entity.Mixer;
 import by.itstep.antonsvirid.model.entity.Toaster;
 import by.itstep.antonsvirid.model.entity.abstracts.Conditionable;
-import by.itstep.antonsvirid.model.entity.abstracts.HouseEquipments;
-import by.itstep.antonsvirid.model.entity.abstracts.KitchenEquipments;
 
 import by.itstep.antonsvirid.model.logic.Housewife;
 import by.itstep.antonsvirid.view.Printer;
@@ -37,8 +35,8 @@ public class Main {
         int totalPowerWhoOn = Housewife.calculatedPowerWhoInset(equipments);
 //        System.out.println("Общая мощность включённых приборов: " + totalPowerWhoOn + "\n");
 
-        String whoIsMaxPowerEquipmunt = Housewife.whoIsMaxPowerEquipment(equipments);
-//        System.out.println("Самый мощный прибор: " + whoIsMaxPowerEquipmunt + "\n");
+        String whoIsMaxPowerEquipment = Housewife.whoIsMaxPowerEquipment(equipments);
+//        System.out.println("Самый мощный прибор: " + whoIsMaxPowerEquipment + "\n");
 
         String sortNamesOfCost = Housewife.sortEquipmentsForCost(equipments);
 //        System.out.println("Отсортированный список по цене: \n" + sortNamesOfCost + "\n");
