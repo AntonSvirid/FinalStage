@@ -58,7 +58,7 @@ public class Housewife {
             }
         }
         for (int i = 0; i < conditionable.length; i++) {
-            sort += conditionable[i].getName() + "\n";
+            sort += conditionable[i].getName() + " ";
         }
         return sort;
 

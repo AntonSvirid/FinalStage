@@ -72,6 +72,8 @@ public class KettleTest {
         assertEquals(String.valueOf(expected), String.valueOf(actual));
     }
 
+
+
     @Test (expected = Exception.class)
     public void testKettleWithUncorrectPower() throws Exception{
         Kettle kettle1 = new Kettle("bosch", 16500, 700, true);
