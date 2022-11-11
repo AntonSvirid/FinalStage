@@ -1,8 +1,9 @@
 package by.itstep.antonsvirid.model.entity;
 
-import by.itstep.antonsvirid.model.entity.abstracts.HouseEquipments;
 
-public class Mixer extends HouseEquipments {
+import by.itstep.antonsvirid.model.entity.abstracts.KitchenEquipments;
+
+public class Mixer extends KitchenEquipments {
     public Mixer() {
     }
 
@@ -11,22 +12,24 @@ public class Mixer extends HouseEquipments {
     }
 
     @Override
-    public void turnOn() {
-        if (isInSet() == true && isTurnOnStatus() == false) {
+    public void turnOn() throws Exception{
+        if (isInSet() && isTurnOnStatus() == false) {
             setTurnOnStatus(true);
             System.out.println("Mixer was turnon...");
         } else {
             System.out.println("error, not correct status");
+            throw new Exception();
         }
     }
 
     @Override
-    public void turnOff() {
-        if (isInSet() == true && isTurnOnStatus() != false) {
+    public void turnOff()  throws Exception{
+        if (isInSet() && isTurnOnStatus()) {
             setTurnOnStatus(false);
             System.out.println("Mixer was turnoff...");
         } else {
             System.out.println("error, not correct status");
+            throw new Exception();
         }
     }
 }

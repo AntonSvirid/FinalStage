@@ -1,10 +1,5 @@
 package by.itstep.antonsvirid.model.entity;
 
-import by.itstep.antonsvirid.model.entity.abstracts.HouseEquipments;
-import by.itstep.antonsvirid.model.entity.abstracts.TurnOnable;
-import by.itstep.antonsvirid.model.entity.Kettle;
-
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -56,6 +51,19 @@ public class KettleTest {
     @Test
     public void testKettleGetturnOnStatus() throws Exception{
         Kettle kettle1 = new Kettle("xiaomi", 1500, 700, true);
+
+        boolean expected = false;
+
+        boolean actual = kettle1.isTurnOnStatus();
+
+        assertEquals(String.valueOf(expected), String.valueOf(actual));
+    }
+
+    @Test
+    public void testKettleSwithAndGetturnOnStatus() throws Exception{
+        Kettle kettle1 = new Kettle("xiaomi", 1500, 700, true);
+        kettle1.turnOn();
+        kettle1.turnOff();
 
         boolean expected = false;
 

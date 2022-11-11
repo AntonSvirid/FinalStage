@@ -3,11 +3,16 @@ package by.itstep.antonsvirid.model.logic;
 // import by.itstep.antonsvirid.model.entity.AllInterfaceses;
 
 import by.itstep.antonsvirid.model.entity.abstracts.Conditionable;
-import by.itstep.antonsvirid.model.entity.abstracts.TurnOnable;
+
 
 public class Housewife {
 
-    public static int calculatedTotalPower(Conditionable conditionable[]) {
+    public static int calculatedTotalPower(Conditionable conditionable[]) throws Exception {
+
+        if (conditionable == null || conditionable.length == 0) {
+            throw new Exception();
+        }
+
         int totalPower = 0;
         for (int i = 0; i < conditionable.length; i++) {
             totalPower += conditionable[i].getPower();
@@ -15,7 +20,12 @@ public class Housewife {
         return totalPower;
     }
 
-    public static int calculatedPowerWhoInset(Conditionable conditionable[]) {
+    public static int calculatedPowerWhoInset(Conditionable conditionable[]) throws Exception  {
+
+        if (conditionable == null || conditionable.length == 0) {
+            throw new Exception();
+        }
+
         int totalPower = 0;
 
         for (int i = 0; i < conditionable.length; i++) {
@@ -26,7 +36,11 @@ public class Housewife {
         return totalPower;
     }
 
-    public static String sortEquipmentsForCost(Conditionable conditionable[]) {
+    public static String sortEquipmentsForCost(Conditionable conditionable[]) throws Exception  {
+
+        if (conditionable == null || conditionable.length == 0) {
+            throw new Exception();
+        }
 
         String sort = "";
         boolean isSorted = false;
@@ -50,7 +64,12 @@ public class Housewife {
 
     }
 
-    public static String whoIsMaxPowerEquipment(Conditionable conditionable[]) {
+    public static String whoIsMaxPowerEquipment(Conditionable conditionable[]) throws Exception  {
+
+        if (conditionable == null || conditionable.length == 0) {
+            throw new Exception();
+        }
+
         int maxIndex = 0;
         int temp = 0;
         for (int i = 0; i < conditionable.length; i++) {

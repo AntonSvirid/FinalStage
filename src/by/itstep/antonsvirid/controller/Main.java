@@ -23,15 +23,17 @@ public class Main {
 //        Mixer mixer = new Mixer("Kenwood", 500, 70, true);
 
         Conditionable[] equipments = new Conditionable[]{
-                new Kettle("bosch", 1800, 150, true),
-                new Boombox("sony", 300, 210, true),
+                new Kettle("bosch", 1800, 150, false),
+                new Boombox("sony", 300, 210, true, 99),
                 new Kettle("xiaomi", 1500, 700, false),
                 new Mixer("Kenwood", 500, 70, true)
         };
 
-        equipments[1].turnOn();
-        equipments[3].disConnectPlug();
+
+        equipments[0].connectPlug();
         equipments[0].turnOn();
+        equipments[1].turnOn();
+        equipments[2].connectPlug();
 
         int totalPower = Housewife.calculatedTotalPower(equipments);
         System.out.println("Общая мощность подключенных к сети приборов: " + totalPower + "\n");
@@ -39,13 +41,15 @@ public class Main {
         int totalPowerWhoOn = Housewife.calculatedPowerWhoInset(equipments);
         System.out.println("Общая мощность включённых приборов: " + totalPowerWhoOn + "\n");
 
-        String sortNamesOfCost = Housewife.sortEquipmentsForCost(equipments);
-        System.out.println("Отсортированный список по цене: \n" + sortNamesOfCost);
+//        String sortNamesOfCost = Housewife.sortEquipmentsForCost(equipments);
+//        System.out.println("Отсортированный список по цене: \n" + sortNamesOfCost);
 
         String whoIsMaxPowerEquipmunt = Housewife.whoIsMaxPowerEquipment(equipments);
         System.out.println("Самый мощный прибор: " + whoIsMaxPowerEquipmunt);
 
+        System.out.println(equipments[1].getInfo());
 
+        System.out.println(equipments[3].getInfo());
     }
 
 }

@@ -1,6 +1,6 @@
 package by.itstep.antonsvirid.model.entity.abstracts;
 
-public abstract class HouseEquipments implements TurnOnable, Conditionable {
+public abstract class HouseEquipments implements Conditionable {
     private String name;
     private int power;
     private int cost;
@@ -43,7 +43,7 @@ public abstract class HouseEquipments implements TurnOnable, Conditionable {
     }
 
     public void setInSet(boolean inSet) {
-        inSet = inSet;
+        this.inSet = inSet;
     }
 
     public boolean isTurnOnStatus() {
@@ -61,28 +61,31 @@ public abstract class HouseEquipments implements TurnOnable, Conditionable {
     }
 
 
-    public void connectPlug() {
+    public void connectPlug() throws Exception{
         if (inSet == false) {
             inSet = true;
             System.out.println("Plug was connected...");
         } else {
             System.out.println("error, not correct status");
+            throw new Exception();
+
         }
     }
 
-    public void disConnectPlug() {
-        if (inSet != false) {
+    public void disConnectPlug() throws Exception{
+        if (inSet) {
             inSet = false;
             turnOnStatus = false;
             System.out.println("Plug was disconnected...");
         } else {
             System.out.println("error, not correct status");
+            throw new Exception();
         }
     }
 
-    public abstract void turnOn();
+    public abstract void turnOn() throws Exception;
 
-    public abstract void turnOff();
+    public abstract void turnOff() throws Exception;
 }
 
 

@@ -32,4 +32,5 @@ public class Kettle extends KitchenEquipments {
             throw new Exception();
         }
     }
+
 }
