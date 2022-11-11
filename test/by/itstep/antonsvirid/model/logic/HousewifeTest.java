@@ -1,9 +1,6 @@
 package by.itstep.antonsvirid.model.logic;
 
-import by.itstep.antonsvirid.model.entity.Boombox;
-import by.itstep.antonsvirid.model.entity.Kettle;
-import by.itstep.antonsvirid.model.entity.Mixer;
-import by.itstep.antonsvirid.model.entity.Toaster;
+import by.itstep.antonsvirid.model.entity.*;
 import by.itstep.antonsvirid.model.entity.abstracts.Conditionable;
 import org.junit.Test;
 
@@ -34,7 +31,8 @@ public class HousewifeTest {
                 new Kettle("xiaomi", 1500, 75, false),
                 new Mixer("Kenwood", 500, 70, true),
                 new Toaster("Philips", 900, 55, true),
-                new Boombox("LG", 210, 180, false, 70)
+                new Boombox("LG", 210, 180, false, 70),
+                new Vacuumcleaner("Dyson", 2500, 1200, false)
         };
 
         int expected = 0;
@@ -52,7 +50,9 @@ public class HousewifeTest {
                 new Kettle("xiaomi", 1500, 75, false),
                 new Mixer("Kenwood", 500, 70, true),
                 new Toaster("Philips", 900, 55, true),
-                new Boombox("LG", 210, 180, false, 70)
+                new Boombox("LG", 210, 180, false, 70),
+                new Vacuumcleaner("Dyson", 2500, 1200, false)
+
         };
         equipments[0].connectPlug();
         equipments[0].turnOn();
@@ -105,7 +105,7 @@ public class HousewifeTest {
     public void testHousewifeFoolProofWithNullArray() throws Exception {
         Conditionable[] equipments = new Conditionable[Integer.parseInt(null)];
 
-        String actual = Housewife.whoIsMaxPowerEquipment(equipments);
+        String actual = Housewife.whoIsMaxPowerEquipment(equipments);         // test is work without "actual" unit...
     }
 
     @Test (expected = Exception.class)

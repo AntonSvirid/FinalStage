@@ -23,7 +23,6 @@ public class Boombox extends HouseEquipments {
     }
 
     public void setVolume(int volume) throws Exception {
-
         if (volume >= 0 && volume < 100) {
             this.volume = volume;
         } else {
