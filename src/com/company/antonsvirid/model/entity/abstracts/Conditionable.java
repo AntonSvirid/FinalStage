@@ -1,4 +1,4 @@
-package by.itstep.antonsvirid.model.entity.abstracts;
+package com.company.antonsvirid.model.entity.abstracts;
 
 public interface Conditionable {
     String getName();

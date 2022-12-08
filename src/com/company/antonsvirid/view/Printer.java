@@ -1,4 +1,4 @@
-package by.itstep.antonsvirid.view;
+package com.company.antonsvirid.view;
 
 public class Printer {
     public static void print(String msg) {

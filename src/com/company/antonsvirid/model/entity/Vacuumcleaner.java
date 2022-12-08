@@ -1,6 +1,6 @@
-package by.itstep.antonsvirid.model.entity;
+package com.company.antonsvirid.model.entity;
 
-import by.itstep.antonsvirid.model.entity.abstracts.HouseEquipments;
+import com.company.antonsvirid.model.entity.abstracts.HouseEquipments;
 
 public class Vacuumcleaner extends HouseEquipments {
 

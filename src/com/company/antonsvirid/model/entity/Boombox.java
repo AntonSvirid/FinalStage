@@ -1,6 +1,6 @@
-package by.itstep.antonsvirid.model.entity;
+package com.company.antonsvirid.model.entity;
 
-import by.itstep.antonsvirid.model.entity.abstracts.HouseEquipments;
+import com.company.antonsvirid.model.entity.abstracts.HouseEquipments;
 
 
 public class Boombox extends HouseEquipments {
@@ -40,7 +40,7 @@ public class Boombox extends HouseEquipments {
 
     @Override
     public void turnOn() throws Exception{
-        if (isInSet() && isTurnOnStatus() == false) {
+        if (isInSet() && !isTurnOnStatus()) {
             setTurnOnStatus(true);
             System.out.println("Boombox was turnon...");
         } else {
@@ -51,7 +51,7 @@ public class Boombox extends HouseEquipments {
 
     @Override
     public void turnOff() throws Exception{
-        if (isInSet() && isTurnOnStatus() != false) {
+        if (isInSet() && isTurnOnStatus()) {
             setTurnOnStatus(false);
             System.out.println("Boombox was turnoff...");
         } else {

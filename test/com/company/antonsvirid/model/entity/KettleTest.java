@@ -1,4 +1,4 @@
-package by.itstep.antonsvirid.model.entity;
+package com.company.antonsvirid.model.entity;
 
 import org.junit.Test;
 

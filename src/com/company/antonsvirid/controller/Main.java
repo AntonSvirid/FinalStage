@@ -1,18 +1,18 @@
-package by.itstep.antonsvirid.controller;
+package com.company.antonsvirid.controller;
 
+import com.company.antonsvirid.model.entity.Boombox;
+import com.company.antonsvirid.model.entity.Kettle;
+import com.company.antonsvirid.model.entity.Mixer;
+import com.company.antonsvirid.model.entity.Toaster;
+import com.company.antonsvirid.model.entity.abstracts.Conditionable;
 
-import by.itstep.antonsvirid.model.entity.Boombox;
-import by.itstep.antonsvirid.model.entity.Kettle;
-
-import by.itstep.antonsvirid.model.entity.Mixer;
-import by.itstep.antonsvirid.model.entity.Toaster;
-import by.itstep.antonsvirid.model.entity.abstracts.Conditionable;
-
-import by.itstep.antonsvirid.model.logic.Housewife;
-import by.itstep.antonsvirid.view.Printer;
+import com.company.antonsvirid.model.logic.Housewife;
+import com.company.antonsvirid.view.Printer;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
+        // small application script:
 
         Conditionable[] equipments = new Conditionable[]{
                 new Kettle("bosch", 1800, 150, false),
@@ -43,7 +43,7 @@ public class Main {
 
         System.out.println(equipments[1].getInfo());
 
-        String msg = equipments[5].getInfo();
+        String msg = equipments[1].toString();
         Printer.print(msg);
     }
 

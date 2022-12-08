@@ -1,8 +1,8 @@
-package by.itstep.antonsvirid.model.logic;
+package com.company.antonsvirid.model.logic;
 
 // import by.itstep.antonsvirid.model.entity.AllInterfaceses;
 
-import by.itstep.antonsvirid.model.entity.abstracts.Conditionable;
+import com.company.antonsvirid.model.entity.abstracts.Conditionable;
 
 
 public class Housewife {

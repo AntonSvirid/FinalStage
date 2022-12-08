@@ -1,13 +1,12 @@
-package by.itstep.antonsvirid.model.entity;
+package com.company.antonsvirid.model.entity;
 
-import by.itstep.antonsvirid.model.entity.abstracts.KitchenEquipments;
+import com.company.antonsvirid.model.entity.abstracts.KitchenEquipments;
 
-public class Kettle extends KitchenEquipments {
-
-    public Kettle() {
+public class Toaster extends KitchenEquipments {
+    public Toaster() {
     }
 
-    public Kettle(String name, int power, int cost, boolean inSet) throws Exception {
+    public Toaster(String name, int power, int cost, boolean inSet) throws Exception {
         super(name, power, cost, inSet);
     }
 
@@ -15,7 +14,7 @@ public class Kettle extends KitchenEquipments {
     public void turnOn() throws Exception{
         if (isInSet() && isTurnOnStatus() == false) {
             setTurnOnStatus(true);
-            System.out.println("Kettle was turnon...");
+            System.out.println("Toaster was turnon...");
         } else {
             System.out.println("error, not correct status");
             throw new Exception();
@@ -26,11 +25,10 @@ public class Kettle extends KitchenEquipments {
     public void turnOff()  throws Exception{
         if (isInSet() && isTurnOnStatus()) {
             setTurnOnStatus(false);
-            System.out.println("Kettle was turnoff...");
+            System.out.println("Toaster was turnoff...");
         } else {
             System.out.println("error, not correct status");
             throw new Exception();
         }
     }
-
 }

@@ -1,7 +1,7 @@
-package by.itstep.antonsvirid.model.logic;
+package com.company.antonsvirid.model.logic;
 
-import by.itstep.antonsvirid.model.entity.*;
-import by.itstep.antonsvirid.model.entity.abstracts.Conditionable;
+import com.company.antonsvirid.model.entity.*;
+import com.company.antonsvirid.model.entity.abstracts.Conditionable;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -1,16 +1,18 @@
-package by.itstep.antonsvirid.model.entity.abstracts;
+package com.company.antonsvirid.model.entity.abstracts;
 
-public abstract class HouseEquipments implements Conditionable {
+
+public abstract class KitchenEquipments implements Conditionable {
     private String name;
     private int power;
     private int cost;
     private boolean inSet;
     private boolean turnOnStatus;
+    private boolean waterProof;
 
-    public HouseEquipments() {
+    public KitchenEquipments() {
     }
 
-    public HouseEquipments(String name, int power, int cost, boolean inSet) throws Exception{
+    public KitchenEquipments(String name, int power, int cost, boolean inSet) throws Exception {
         this.name = name;
         if (power > 0 && power < 12_000) {
             this.power = power;
@@ -24,6 +26,7 @@ public abstract class HouseEquipments implements Conditionable {
         }
         this.inSet = inSet;
         this.turnOnStatus = false;      // all equipments are not turnOn as default
+        this.waterProof = true;         // all Kitchen equipments are waterProof as default
     }
 
     public String getName() {
@@ -38,12 +41,12 @@ public abstract class HouseEquipments implements Conditionable {
         return cost;
     }
 
-    public boolean isInSet() {
-        return inSet;
+    public void setInSet(boolean inSet) {
+        inSet = inSet;
     }
 
-    public void setInSet(boolean inSet) {
-        this.inSet = inSet;
+    public boolean isInSet() {
+        return inSet;
     }
 
     public boolean isTurnOnStatus() {
@@ -54,25 +57,28 @@ public abstract class HouseEquipments implements Conditionable {
         this.turnOnStatus = turnOnStatus;
     }
 
+    public boolean isWaterProof() {
+        return waterProof;
+    }
+
     public String getInfo() {
         String msg = "Device name: " + name + "\nmax power Wt: " + power + "\ncost $: "
-                + cost + "\nconnect to set status: " + inSet + "\ndevice is on?: " + turnOnStatus + "\n";
+                + cost + "\nconnect to set status: " + inSet + "\ndevice is on?: " + turnOnStatus
+                + "\nis waterproof?: " + waterProof + "\n";
         return msg;
     }
 
-
-    public void connectPlug() throws Exception{
+    public void connectPlug() throws Exception {
         if (inSet == false) {
             inSet = true;
             System.out.println("Plug was connected...");
         } else {
             System.out.println("error, not correct status");
             throw new Exception();
-
         }
     }
 
-    public void disConnectPlug() throws Exception{
+    public void disConnectPlug() throws Exception {
         if (inSet) {
             inSet = false;
             turnOnStatus = false;
@@ -86,6 +92,6 @@ public abstract class HouseEquipments implements Conditionable {
     public abstract void turnOn() throws Exception;
 
     public abstract void turnOff() throws Exception;
-}
 
+}
 
